@@ -1,0 +1,25 @@
+{
+  "collection": "Full", 
+  "map": [
+    [
+      "Email Address",
+      "Email"
+    ],
+    [
+      "First Name",
+      "First Name"
+    ],
+    [
+      "Goal Triggered",
+      "event"
+    ],
+    [
+      "last visited at",
+      "last_visited_at"
+    ],
+    [
+      "Email Client",
+      "Email Client"
+    ]
+  ]
+}

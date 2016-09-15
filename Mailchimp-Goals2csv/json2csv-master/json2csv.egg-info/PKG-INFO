@@ -1,0 +1,10 @@
+Metadata-Version: 1.0
+Name: json2csv
+Version: 0.1
+Summary: Converts JSON files to CSV (pulling data from nested structures). Useful for Mongo data
+Home-page: https://github.com/evidens/json2csv
+Author: evidens
+Author-email: UNKNOWN
+License: MIT License
+Description: UNKNOWN
+Platform: UNKNOWN
