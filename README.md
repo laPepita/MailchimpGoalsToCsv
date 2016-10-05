@@ -6,12 +6,12 @@ accesses the mailchimp API and pulls user's goals out from a list and outputs th
 ## How to use
 On Windows with Python already installed
 - open `CMD`
-- Navigate to the correct directory
+- Navigate to the directory where the `__init__.py` file sits using `cd [Some file path]`
 - run `$~ python __init__.py Mailchimp-APIKey ListID1 ListID2 ListID3 ..... ListIDx`
 - The files will be output in the folder location `..` from where you call the script.
 
 It outputs 2 CSV files for each list input:
-  1. Overview of all goal triggered 
+  1. Overview of all goals triggered 
   2. Person specific data
 
 ## Requirements
