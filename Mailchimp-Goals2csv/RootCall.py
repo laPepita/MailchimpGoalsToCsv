@@ -37,7 +37,7 @@ def goal(APIKey, ListID):
 
             #make the API call for the currently selected user
             goalResponse = requests.get(baseURL + member["id"] + "/goals", auth=('APIuser', APIKey))
-            print "---  Members processed = " + str(i + 1)
+            print("---  Members processed = " + str(i + 1))
             # print member["email_client"]
             # print goalResponse.text
 
@@ -70,12 +70,12 @@ def goal(APIKey, ListID):
         e = sys.exc_info()[0]
         print ("Error: %s" % e)
 
-    print "\t" + str(GoalList)
-    print "The new JSON file"
+    print ("\t" + str(GoalList))
+    print ("The new JSON file")
     for items in goalListInJSON:
-        print '\t' + str(items["event"])
+        print ('\t' + str(items["event"]))
 
-    print "\nRootcall Script finished"
+    print ("\nRootcall Script finished")
 
 # Get the name of ths list using the List ID that was provided
 def getListName(ListID,APIKey):
@@ -84,7 +84,7 @@ def getListName(ListID,APIKey):
         # Get the name of the list
         listDetails = requests.get("https://us14.api.mailchimp.com/3.0/lists/" + ListID, auth=('APIuser', APIKey))
         listName = listDetails.json()['name']
-        print 'The list name is "' + str(listName) + '"'
+        print ('The list name is "' + str(listName) + '"')
 
     except:
         e = sys.exc_info()[0]
