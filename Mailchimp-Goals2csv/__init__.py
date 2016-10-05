@@ -44,21 +44,21 @@ def main():
         except:
             e = sys.exc_info()[0]
             print ("Error: %s" % e)
-            print "LIST ID is not valid for this Argument....."
+            print("LIST ID is not valid for this Argument.....")
 
         exit()
 
     if len(sys.argv[1]) == 37:
         APIKey = sys.argv[1]
-        print "API Key set"
+        print("API Key set")
     else:
-        print "#"*100
-        print "ERROR"
-        print "The API Key was not 37 characters long or not in the first parameter...."
-        print "This will cause the program to fail... please supply the API key correctly"
-        print "\n**Please supply in this format:\n\t Function APIKey ListID1 ListID2 ListID...\n An example:\n\t__init__.py 5b4bcc3a087b70803401ddddf4da05d1-us14 6564931f32 6567931f32"
-        print "ERROR"
-        print "#" * 100
+        print("#"*100)
+        print ("ERROR")
+        print ("The API Key was not 37 characters long or not in the first parameter....")
+        print ("This will cause the program to fail... please supply the API key correctly")
+        print ("\n**Please supply in this format:\n\t Function APIKey ListID1 ListID2 ListID...\n An example:\n\t__init__.py 5b4bcc3a087b70803401ddddf4da05d1-us14 6564931f32 6567931f32")
+        print ("ERROR")
+        print ("#" * 100)
         exit()
 
     current = " " + str(time.strftime("%c")).replace('/','-')
@@ -74,7 +74,7 @@ def main():
 
 
     for arg in sys.argv[2:]:
-        print arg
+        print (arg)
         if len(arg) > 8 & len(arg) < 12:
             try:
                 # # Call the goal method and pass in the API key and the list ID number
@@ -96,7 +96,7 @@ def main():
                     a = names[0].rstrip(names[0][-4:])
                     shutil.move(a + "csv","../GoalCSVFolder" + current)
                 except:
-                    print " Files could not be replaced... There are already files existing with the same name... Please move or delete them"
+                    print (" Files could not be replaced... There are already files existing with the same name... Please move or delete them")
 
                 # Build the CSV file for the Goal overview data
                 subprocess.call(['python', 'Json2csv-master/json2csv.py', names[1], "masterOverview.outline.json"])
@@ -106,13 +106,13 @@ def main():
                     a = names[1].rstrip(names[0][-4:])
                     shutil.move(a + "csv", "../GoalCSVFolder" +  current)
                 except:
-                    print " Files could not be replaced... There are already files existing with the same name... Please move or delete them"
+                    print (" Files could not be replaced... There are already files existing with the same name... Please move or delete them")
             except:
                 e = sys.exc_info()[0]
                 print ("Error: %s" % e)
-                print "LIST ID is not valid for this Argument....."
+                print ("LIST ID is not valid for this Argument.....")
 
-    print "\nFull function is done running"
+    print ("\nFull function is done running")
     pass
 
 if __name__ == "__main__":
