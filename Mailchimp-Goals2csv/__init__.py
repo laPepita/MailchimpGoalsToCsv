@@ -113,6 +113,7 @@ def main():
                 print ("LIST ID is not valid for this Argument.....")
 
     print ("\nFull function is done running")
+    print('  _________\n /         \\\n |  /\\ /\\  |\n |    -    |\n |  \\___/  |\n \\_________/');
     pass
 
 if __name__ == "__main__":
