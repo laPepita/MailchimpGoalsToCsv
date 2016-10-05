@@ -4,7 +4,7 @@ import urllib
 import requests, sys, json
 
 def goal(APIKey, ListID):
-    print "Beginning the script now ....\n...\n"
+    print("Beginning the script now ....\n...\n")
     #try the below (For error handling)
 
     #############################################
@@ -13,7 +13,7 @@ def goal(APIKey, ListID):
 
     # Create new URL to make the call to Mailchimp and get back specific list data
     newURL = "https://us14.api.mailchimp.com/3.0/lists/" + ListID + "/members"
-    print newURL + '\n\n'
+    print (newURL + '\n\n')
 
     # Define the base URL
     baseURL = newURL + "/"
@@ -32,8 +32,8 @@ def goal(APIKey, ListID):
 
 
         for i, member in enumerate(membersResponse.json()["members"]):
-            # print "member Id : " + member["id"]
-            # print "member email address: " + member["email_address"]
+            # print ("member Id : " + member["id"])
+            # print ("member email address: " + member["email_address"])
 
             #make the API call for the currently selected user
             goalResponse = requests.get(baseURL + member["id"] + "/goals", auth=('APIuser', APIKey))
@@ -103,7 +103,7 @@ def addToGoalList(GoalName,GoalList):
         for j, items in enumerate(GoalList):
 
             if GoalName == items["Goal Name"]:
-                # print "in"
+                # print ("in")
 
                 a = GoalList[j]["Times triggered"]
                 a = a + 1
@@ -116,7 +116,7 @@ def addToGoalList(GoalName,GoalList):
         if flag:
             GoalList.append({"Goal Name": GoalName, "Times triggered": 1}.copy())
 
-    # print GoalList
+    # print (GoalList)
 
     return GoalList
 
@@ -133,9 +133,9 @@ def buildJSONFile(name,data):
 #Build the new JSON file only containing goals etc...
 def appendMemberInfoToGoal(name,client, email, goals, goalListInJSON):
     # append the email to the goal list
-    # print goals
-    # print name
-    # print client
+    # print (goals)
+    # print (name)
+    # print (client)
     goals["Email"] = email
 
     if not name:
@@ -149,7 +149,7 @@ def appendMemberInfoToGoal(name,client, email, goals, goalListInJSON):
         goals["Email Client"] = client
     else:
         goals["Email Client"] = client
-    # print goals
+    # print (goals)
     #Append the goal (Containing the email field) to the goalListInJSON Master list
     goalListInJSON.append(goals)
 
