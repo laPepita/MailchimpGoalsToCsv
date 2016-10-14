@@ -48,7 +48,7 @@ def main():
 
         exit()
 
-    if len(sys.argv[1]) == 37:
+    if len(sys.argv[1]) >= 36:
         APIKey = sys.argv[1]
         print("API Key set")
     else:
