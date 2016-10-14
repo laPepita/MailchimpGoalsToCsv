@@ -12,7 +12,7 @@ def goal(APIKey, ListID):
     #############################################
 
     # Create new URL to make the call to Mailchimp and get back specific list data
-    newURL = "https://us14.api.mailchimp.com/3.0/lists/" + ListID + "/members"
+    newURL = "https://us9.api.mailchimp.com/3.0/lists/" + ListID + "/members"
     print (newURL + '\n\n')
 
     # Define the base URL
@@ -24,11 +24,14 @@ def goal(APIKey, ListID):
 
     listName = getListName(ListID, APIKey)
 
+    params = {
+    'count': 5000
+    }
 
     try:
 
         #Make the first call to get the response of the API call 'https://usX.api.mailchimp.com/3.0/lists/ListID/members'
-        membersResponse = requests.get(newURL,auth=('APIuser', APIKey))
+        membersResponse = requests.get(newURL,params=params,auth=('APIuser', APIKey))
 
 
         for i, member in enumerate(membersResponse.json()["members"]):
@@ -82,7 +85,7 @@ def getListName(ListID,APIKey):
     listName = "Not found"
     try:
         # Get the name of the list
-        listDetails = requests.get("https://us14.api.mailchimp.com/3.0/lists/" + ListID, auth=('APIuser', APIKey))
+        listDetails = requests.get("https://us9.api.mailchimp.com/3.0/lists/" + ListID, auth=('APIuser', APIKey))
         listName = listDetails.json()['name']
         print ('The list name is "' + str(listName) + '"')
 
