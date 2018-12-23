@@ -16,8 +16,8 @@ import time
 # 3. All other parameters after that should be the List ID's' \
 #                                                         '' \
 # For example:
-#     __init__.py 5b4bcc3a087b70803401ddddf4da05d1-us14 6564931f32 6567931f32 6564931f52 6564931h32
-# will use the API Key 5b4bcc3a087b70803401ddddf4da05d1-us14 and get the goals for the 4 lists provided.
+#     __init__.py 5b4brc3a087b70803501ddddf4da05d1-us14 6564931f32 6567931f32 6564931f52 6564931h32
+# will use the API Key 5XXXcc3a087b70803401ddddf4da05d1-us14 and get the goals for the 4 lists provided.
 
 
 def main():
