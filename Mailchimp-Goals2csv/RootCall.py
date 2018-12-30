@@ -48,7 +48,7 @@ def goal(APIKey, ListID):
             tet = goalResponse.json()
 
             # print member["email_client"]
-            # print member["merge_fields"]["FNAME"]
+            print member["merge_fields"]["FNAME"]
             # print "-=-=-=-=-=-=-=-=-=-=-=-=-="
             # print "-=-=-===============-=-=-="
 
@@ -152,7 +152,7 @@ def appendMemberInfoToGoal(name,client, email, goals, goalListInJSON):
         goals["Email Client"] = client
     else:
         goals["Email Client"] = client
-    # print (goals)
+    print (goals)
     #Append the goal (Containing the email field) to the goalListInJSON Master list
     goalListInJSON.append(goals)
 
@@ -160,6 +160,7 @@ def appendMemberInfoToGoal(name,client, email, goals, goalListInJSON):
 
 #Dump to a JSON file
 def buildJSONOverviewFile(name,data):
+    print ("Dump to a JSON file")
     name = name + "Overview.json"
     name = name.replace (" ", "_")
     with open(name, 'w') as outfile:
